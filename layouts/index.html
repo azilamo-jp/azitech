@@ -1,0 +1,38 @@
+{{ define "main" }}
+{{ $posts := where site.RegularPages "Type" "blog" }}
+<section class="home-hero">
+  <div class="home-copy">
+    {{ .Content }}
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="section-heading">
+    <h2>Latest posts</h2>
+    <a href="{{ "/blog/" | relURL }}">View all</a>
+  </div>
+
+  <ul class="post-list">
+    {{ range first 5 ($posts.ByDate.Reverse) }}
+    <li class="post-card">
+      <p class="post-meta">
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+          {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+        </time>
+      </p>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      {{ with .Params.description }}
+      <p>{{ . }}</p>
+      {{ else }}
+      <p>{{ .Summary | plainify }}</p>
+      {{ end }}
+    </li>
+    {{ else }}
+    <li class="post-card">
+      <h3>No posts yet</h3>
+      <p>最初の記事を追加すると、ここに最新記事が表示されます。</p>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

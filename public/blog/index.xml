@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AziTech</title>
-    <link>https://tech.azilamo.dev/</link>
-    <description>Recent content on AziTech</description>
+    <title>Blog on AziTech</title>
+    <link>https://tech.azilamo.dev/blog/</link>
+    <description>Recent content in Blog on AziTech</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Jun 2026 19:00:00 +0900</lastBuildDate>
-    <atom:link href="https://tech.azilamo.dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tech.azilamo.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Starting a Simple Tech Blog with Hugo</title>
       <link>https://tech.azilamo.dev/blog/starting-a-simple-tech-blog-with-hugo/</link>

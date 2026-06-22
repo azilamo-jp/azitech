@@ -1,0 +1,46 @@
+{{ define "main" }}
+<section class="home-section">
+  {{ if .Data.Singular }}
+  <p class="post-meta">Filtering for "{{ .Title }}"</p>
+  <p><a href="{{ "blog" | relURL }}">Remove filter</a></p>
+  {{ else }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}
+  <div class="list-intro">
+    {{ . }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <ul class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li class="post-card">
+      <p class="post-meta">
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+          {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+        </time>
+      </p>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ with .Params.description }}
+      <p>{{ . }}</p>
+      {{ else }}
+      <p>{{ .Summary | plainify }}</p>
+      {{ end }}
+    </li>
+    {{ else }}
+    <li class="post-card">
+      <h2>No posts yet</h2>
+      <p>まだ公開された記事はありません。</p>
+    </li>
+    {{ end }}
+  </ul>
+
+  {{ if and (not .Data.Singular) .Site.Taxonomies.tags }}
+  <div class="tag-cloud">
+    {{ range .Site.Taxonomies.tags.ByCount }}
+    <a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+{{ end }}

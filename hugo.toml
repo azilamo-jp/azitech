@@ -1,4 +1,68 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
+baseURL = 'https://tech.azilamo.dev'
+languageCode = 'en-us'
 title = 'AziTech'
 theme = 'hugo-bearblog'
+enableRobotsTXT = true
+
+[permalinks]
+  blog = '/blog/:slug/'
+  tags = '/tags/:slug/'
+
+[params]
+  description = 'I post technical articles here from time to time.'
+  title = 'AziTech'
+  dateFormat = '2006-01-02'
+  enablePostNavigator = true
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 10
+
+  [[menu.main]]
+    name = 'Blog'
+    url = '/blog/'
+    weight = 20
+
+[module]
+  [[module.imports]]
+    path = "github.com/privatemaker/headless-cms"
+
+[outputs]
+  home = ["HTML", "RSS", "HeadlessCMSConfig"]
+
+[params.headless_cms]
+engine = "sveltia"
+site_url = "https://tech.azilamo.dev"
+
+[params.headless_cms.backend]
+name = "github"
+repo = "azilamo-jp/azitech"
+
+[params.headless_cms.collections.posts]
+label = "Posts"
+name = "posts"
+folder = "content/blog"
+create = true
+
+[[params.headless_cms.collections.posts.fields]]
+label = "Title"
+name = "title"
+widget = "string"
+
+[[params.headless_cms.collections.posts.fields]]
+label = "Body"
+name = "body"
+widget = "markdown"
+
+[[params.headless_cms.collections.posts.fields]]
+label = "Date"
+name = "date"
+widget = "datetime"
+
+[[params.headless_cms.collections.posts.fields]]
+label = "Draft"
+name = "draft"
+widget = "boolean"
+default = true
