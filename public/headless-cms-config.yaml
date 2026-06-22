@@ -7,6 +7,10 @@ collections:
   - label: Title
     name: title
     widget: string
+  - label: Description
+    name: description
+    required: false
+    widget: text
   - label: Body
     name: body
     widget: markdown
@@ -17,6 +21,10 @@ collections:
     label: Draft
     name: draft
     widget: boolean
+  - label: Tags
+    name: tags
+    required: false
+    widget: list
   folder: content/blog
   label: Posts
   name: posts

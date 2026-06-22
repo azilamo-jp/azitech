@@ -1,5 +1,6 @@
 ---
 title: AziTech
+description: I post technical articles here from time to time.
 ---
 
 # AziTech

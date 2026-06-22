@@ -52,6 +52,12 @@ name = "title"
 widget = "string"
 
 [[params.headless_cms.collections.posts.fields]]
+label = "Description"
+name = "description"
+widget = "text"
+required = false
+
+[[params.headless_cms.collections.posts.fields]]
 label = "Body"
 name = "body"
 widget = "markdown"
@@ -66,3 +72,9 @@ label = "Draft"
 name = "draft"
 widget = "boolean"
 default = true
+
+[[params.headless_cms.collections.posts.fields]]
+label = "Tags"
+name = "tags"
+widget = "list"
+required = false
