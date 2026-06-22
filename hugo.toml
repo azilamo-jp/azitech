@@ -11,6 +11,7 @@ enableRobotsTXT = true
 [params]
   description = 'I post technical articles here from time to time.'
   title = 'AziTech'
+  favicon = 'favicon.png'
   dateFormat = '2006-01-02'
   enablePostNavigator = true
 
