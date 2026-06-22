@@ -1,6 +1,6 @@
 ---
 title: I started a blog!
-date: 2026-06-22T19:28
+date: 2026-06-22T19:28:00+09:00
 draft: false
 ---
 
