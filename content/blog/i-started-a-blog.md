@@ -4,8 +4,7 @@ description: A short introduction to my new tech blog and what I plan to post he
 date: 2026-06-22T19:28:00+09:00
 draft: false
 tags:
-  - blog
-  - introduction
+  - info
 ---
 
 Hey everyone, Azilamo here! I've just launched my new blog!
