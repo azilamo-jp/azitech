@@ -1,5 +1,5 @@
 baseURL = 'https://tech.azilamo.dev'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'AziTech'
 theme = 'hugo-bearblog'
 enableRobotsTXT = true
